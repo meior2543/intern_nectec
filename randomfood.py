@@ -5,7 +5,7 @@ from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
 
-@app.get("/validation-email")
+@app.get("/randomfood")
 async def validation_email(budged:int):
         food = {'ลาบหมู' : 50,
                 'ลาบเนื้อ' : 55,

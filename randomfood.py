@@ -6,7 +6,7 @@ from fastapi.responses import PlainTextResponse
 app = FastAPI()
 
 @app.get("/RandomFood")
-async def randomfood(budged:int):
+async def randomfood(budged:int = 'งบอาหารจำนวนเต็ม'):
         food = {'ลาบหมู' : 50,
                 'ลาบเนื้อ' : 55,
                 'ลาบปลาลุก' : 50,

@@ -10,7 +10,7 @@ async def randomfood(budged:int = 'งบอาหารจำนวนเต็
         food = {'ลาบหมู' : 50,
                 'ลาบเนื้อ' : 55,
                 'ลาบปลาลุก' : 50,
-                'ฉาบมาม่า' : 40,
+                'ลาบมาม่า' : 40,
                 'ลาบวุ้นเสีน' : 40,
                 'น้ำตกหมู' : 50,
                 'ตับหวาน' : 50,
@@ -153,9 +153,9 @@ async def randomfood(budged:int = 'งบอาหารจำนวนเต็
                 'ข้าวผัดต้มยำ ทะเล' : 45,
                 'ข้าวผัดต้มยำ รวมมิตร' : 45}
 
-        filter_food = dict(filter(lambda elem: int(elem[1]) <= budged, food.items()))
+        filter_food = dict(filter(lambda elem: int(elem[1]) <= int(budged), food.items()))
         meal = random.choice(list(filter_food.items()))
-        return {'เมนูที่ได้':meal[0], 'ราคาประมาณ':meal[1]}
+        return {'เมนูที่ได้':meal[0], 'ราคาประมาณต่อจาน/ชิ้น':meal[1]}
 
 if __name__ == '__main__':
    uvicorn.run(app, host="0.0.0.0", port=80, debug=True) 
